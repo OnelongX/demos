@@ -1,0 +1,35 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Robot">
+    <output-path>$PROJECT_DIR$/out/artifacts/Robot</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="com.agu.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="nativeBundle" value="dmg" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Robot.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+      <element id="directory" name="libs">
+        <element id="library" level="project" name="c3p0-0.9.1.2" />
+        <element id="library" level="project" name="jackson-annotations-2.2.3" />
+        <element id="library" level="project" name="mysql-connector-java-6.0.3" />
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="dir-copy" path="$PROJECT_DIR$/template" />
+      <element id="directory" name="template">
+        <element id="file-copy" path="$PROJECT_DIR$/template/java/module.ftl" />
+      </element>
+    </root>
+  </artifact>
+</component>
