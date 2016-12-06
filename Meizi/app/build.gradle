@@ -1,0 +1,103 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'realm-android'
+//apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "25.0.1"
+
+    defaultConfig {
+        applicationId "com.spark.meizi"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 15
+        versionName "1.5"
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        release {
+
+        }
+    }
+
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            debuggable false
+            //是否混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+        }
+        debug {
+            versionNameSuffix "-debug"
+        }
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    productFlavors {
+        wandoujia {}
+    }
+/*
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/services/javax.annotation.processing.Processor' // butterknife
+        exclude 'AUTHORS'
+        exclude 'META-INF/BCKEY.DSA'
+        exclude 'META-INF/BCKEY.SF'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
+    }
+    */
+}
+/*
+configurations {
+    all*.exclude group: 'commons-logging', module: 'commons-logging'
+    all*.exclude module: 'httpclient'
+}
+*/
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile rootProject.ext.appcompatV7
+    compile rootProject.ext.supportV4
+    compile rootProject.ext.androiddesign
+    compile rootProject.ext.recyclerview
+    //compile rootProject.ext.realm
+    compile rootProject.ext.retrofit
+    compile rootProject.ext.retrofitgson
+    compile rootProject.ext.rxJava
+    compile rootProject.ext.rxAndroid
+    compile rootProject.ext.rxAdapter
+    compile rootProject.ext.glide
+    compile rootProject.ext.cardview
+    //compile rootProject.ext.butterknife
+    compile rootProject.ext.multidex
+    //apt rootProject.ext.butterknifeCompiler
+    compile (rootProject.ext.photoview) {
+        exclude module: 'support-v4'
+    }
+    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+    compile 'com.trello.rxlifecycle2:rxlifecycle:2.0.1'
+// If you want to bind to Android-specific lifecycles
+   // compile 'com.trello.rxlifecycle2:rxlifecycle-android:2.0.1'
+// If you want pre-written Activities and Fragments you can subclass as providers
+    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.0.1'
+    //compile 'com.umeng.analytics:analytics:latest.integration'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+}

@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="WebHello" />
+        <module name="webhello" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="WebHello" target="1.5" />
+      <module name="webhello" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

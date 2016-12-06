@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="WebHello:war exploded">
+  <artifact type="exploded-war" name="webhello:war exploded">
     <output-path>$PROJECT_DIR$/target/webhello</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="WebHello" />
+          <element id="module-output" name="webhello" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
@@ -60,7 +60,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/webhello/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="WebHello/web/Web" />
+      <element id="javaee-facet-resources" facet="webhello/web/Web" />
     </root>
   </artifact>
 </component>

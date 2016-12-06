@@ -1,0 +1,53 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.2'
+       // classpath "io.realm:realm-gradle-plugin:1.1.0"
+        //classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+
+def supportVersion = "25.0.1"
+
+ext {
+    //Android sdk
+    appcompatV7 = "com.android.support:appcompat-v7:${supportVersion}"
+    supportV4 = "com.android.support:support-v4:${supportVersion}"
+    androiddesign = "com.android.support:design:${supportVersion}"
+    recyclerview = "com.android.support:recyclerview-v7:${supportVersion}"
+    cardview = "com.android.support:cardview-v7:${supportVersion}"
+    //butterknife = "com.jakewharton:butterknife:8.4.0"
+    //butterknifeCompiler = "com.jakewharton:butterknife-compiler:8.4.0"
+    retrofit = "com.squareup.retrofit2:retrofit:2.1.0"
+    retrofitgson = "com.squareup.retrofit2:converter-gson:2.1.0"
+    //rxAdapter = "com.squareup.retrofit2:adapter-rxjava2:2.1.1"
+    //compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    rxAdapter = "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0"
+    rxJava = "io.reactivex.rxjava2:rxjava:2.0.1"
+    rxAndroid = "io.reactivex.rxjava2:rxandroid:2.0.1"
+
+
+    //realm = "io.realm:realm-gradle-plugin:1.1.0"
+    glide = "com.github.bumptech.glide:glide:3.7.0"
+    multidex = 'com.android.support:multidex:1.0.1'
+    photoview = 'com.github.chrisbanes:PhotoView:1.3.1'
+}
