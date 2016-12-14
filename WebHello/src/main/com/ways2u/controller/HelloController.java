@@ -16,7 +16,7 @@ import java.lang.annotation.Annotation;
 /**
  * Created by huanglong on 16/9/7.
  */
-@org.springframework.stereotype.Controller("/hello.do")
+@Controller("/hello.do")
 public class HelloController implements Controller
 {
     @Autowired
